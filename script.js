@@ -1412,3 +1412,17 @@ const UI = {
 // INITIALIZE
 // =============================================
 document.addEventListener('DOMContentLoaded', () => UI.init());
+
+// =============================================
+// EXPOSE OBJECTS TO GLOBAL SCOPE FOR INLINE HANDLERS
+// ES modules isolate variables, but inline onclick="UI.xxx()" 
+// needs access to UI from the global window scope
+// =============================================
+window.UI = UI;
+window.AgentManager = AgentManager;
+window.LeadManager = LeadManager;
+window.Auth = Auth;
+window.CSVExporter = CSVExporter;
+window.DataStore = DataStore;
+window.Analytics = Analytics;
+window.supabase = supabase;
