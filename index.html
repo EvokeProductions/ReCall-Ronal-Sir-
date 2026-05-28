@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReCall by Evoke Productions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="Recall by Evoke Productions Logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" href="Recall by Evoke Productions Logo.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ============================================
+         LOADING SCREEN
+         ============================================ -->
+    <div id="loadingScreen" class="loading-screen">
+        <div class="loading-content">
+            <!-- LOGO: Replace src="logo.png" with your logo image path -->
+            <div class="loading-logo-wrap">
+                <div class="loading-logo-ring"></div>
+                <div class="loading-logo">
+                    <img src="Recall by Evoke Productions Logo.png" alt="ReCall" onerror="this.style.display='none'; this.parentElement.classList.add('loading-logo-fallback');">
+                </div>
+            </div>
+            <h1 class="loading-title">ReCall</h1>
+            <p class="loading-subtitle">Telesales CRM Platform</p>
+            <div class="loading-progress">
+                <div class="loading-progress-bar"></div>
+            </div>
+            <p class="loading-status" id="loadingStatus">Initializing...</p>
+        </div>
+        <div class="loading-footer">
+            <span>by</span>
+            <img src="Productions - Black.png" alt="Evoke Productions" class="footer-logo" onerror="this.outerHTML='<span class=\'brand-fallback\'>Evoke Productions</span>'">
+        </div>
+    </div>
+
+    <!-- LOGIN SCREEN -->
+    <div id="loginScreen" class="login-screen hidden">
+        <div class="login-bg-orb orb-1"></div>
+        <div class="login-bg-orb orb-2"></div>
+        <div class="login-bg-orb orb-3"></div>
+
+        <div class="login-container">
+            <div class="login-header">
+                <div class="login-logo-wrap">
+                    <div class="login-logo">
+                        <img src="Recall by Evoke Productions Logo.png" alt="ReCall" onerror="this.style.display='none'; this.parentElement.classList.add('logo-fallback');">
+                    </div>
+                </div>
+                <h1 class="login-app-name">ReCall</h1>
+                <p class="login-tagline">Sign in to your workspace</p>
+            </div>
+
+            <form id="loginForm" class="login-form" novalidate>
+                <!-- User select with custom styling -->
+                <div class="login-field">
+                    <label for="loginUsername" class="login-label">
+                        <svg class="label-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        Select Account
+                    </label>
+                    <div class="select-wrapper">
+                        <select id="loginUsername" class="login-input login-select" required>
+                            <option value="" disabled selected>Select a user</option>
+                        </select>
+                        <div class="select-chevron">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Password field -->
+                <div class="login-field">
+                    <label for="loginPassword" class="login-label">
+                        <svg class="label-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                        Password
+                    </label>
+                    <div class="password-wrapper">
+                        <input type="password" id="loginPassword" class="login-input" placeholder="Enter your password" required autocomplete="current-password">
+                        <button type="button" class="password-toggle" id="passwordToggle" aria-label="Toggle password visibility" tabindex="-1">
+                            <svg class="eye-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                            <svg class="eye-closed hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div id="loginError" class="login-error hidden">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                    <span id="loginErrorText">Invalid credentials</span>
+                </div>
+
+                <button type="submit" class="login-submit" id="loginSubmitBtn">
+                    <span class="btn-text">Sign In</span>
+                    <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </button>
+            </form>
+
+            <div class="login-footer">
+                <span>by</span>
+            <img src="Productions - Black.png" alt="Evoke Productions" class="footer-logo" onerror="this.outerHTML='<span class=\'brand-fallback\'>Evoke Productions</span>'">
+</div>
+        </div>
+    </div>
+
+    <!-- MAIN APP -->
+    <div id="appContainer" class="app-container hidden">
+
+        <nav id="sidebar" class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-mark-sm">
+                    <img src="Recall by Evoke Productions Logo.png" alt="ReCall" onerror="this.style.display='none'; this.parentElement.classList.add('logo-fallback');">
+                </div>
+                <span class="sidebar-brand">ReCall</span>
+            </div>
+            <ul class="sidebar-nav">
+                <li><a href="#" data-page="dashboard" class="nav-link active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg><span>Dashboard</span></a></li>
+                <li><a href="#" data-page="leads" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span>Leads</span></a></li>
+                <li><a href="#" data-page="followups" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><span>Follow-Ups</span></a></li>
+                <li><a href="#" data-page="analytics" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg><span>Analytics</span></a></li>
+                <li class="admin-only hidden"><a href="#" data-page="admin" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg><span>Admin</span></a></li>
+            </ul>
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="user-avatar" id="sidebarAvatar">A</div>
+                    <div class="user-details">
+                        <span class="user-name" id="sidebarName">Admin</span>
+                        <span class="user-role" id="sidebarRole">Administrator</span>
+                    </div>
+                </div>
+                <button id="logoutBtn" class="btn btn-ghost btn-sm">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+                    Logout
+                </button>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="top-bar-left">
+                    <button class="btn btn-ghost mobile-menu-btn" id="mobileMenuBtn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+                    </button>
+                    <h2 class="page-title" id="pageTitle">Dashboard</h2>
+                </div>
+                <div class="top-bar-right">
+                    <span class="current-date" id="currentDate"></span>
+                    <button class="btn btn-primary btn-sm" id="addLeadBtn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        New Lead
+                    </button>
+                </div>
+            </header>
+
+            <section id="page-dashboard" class="page active">
+                <div class="stats-grid">
+                    <div class="stat-card"><div class="stat-icon stat-icon-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div class="stat-info"><span class="stat-value" id="statTotal">0</span><span class="stat-label">Total Leads</span></div></div>
+                    <div class="stat-card"><div class="stat-icon stat-icon-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><div class="stat-info"><span class="stat-value" id="statAnswered">0</span><span class="stat-label">Answered</span></div></div>
+                    <div class="stat-card"><div class="stat-icon stat-icon-red"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></div><div class="stat-info"><span class="stat-value" id="statDeclined">0</span><span class="stat-label">Declined</span></div></div>
+                    <div class="stat-card"><div class="stat-icon stat-icon-orange"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div><div class="stat-info"><span class="stat-value" id="statNoAnswer">0</span><span class="stat-label">No Answer</span></div></div>
+                    <div class="stat-card"><div class="stat-icon stat-icon-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div class="stat-info"><span class="stat-value" id="statPending">0</span><span class="stat-label">Pending</span></div></div>
+                    <div class="stat-card"><div class="stat-icon stat-icon-gray"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div><div class="stat-info"><span class="stat-value" id="statCompleted">0</span><span class="stat-label">Completed</span></div></div>
+                    <div class="stat-card"><div class="stat-icon stat-icon-cyan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><div class="stat-info"><span class="stat-value" id="statToday">0</span><span class="stat-label">Today</span></div></div>
+                </div>
+                <div class="dashboard-grid">
+                    <div class="card"><div class="card-header"><h3>Today's Follow-Ups</h3></div><div class="card-body" id="todayFollowUps"><div class="empty-state"><p>No follow-ups scheduled for today.</p></div></div></div>
+                    <div class="card"><div class="card-header"><h3>Recent Activity</h3></div><div class="card-body" id="recentActivity"><div class="empty-state"><p>No recent activity.</p></div></div></div>
+                </div>
+            </section>
+
+            <section id="page-leads" class="page">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>All Leads</h3>
+                        <div class="filter-bar">
+                            <input type="text" id="searchInput" class="input input-search" placeholder="Search leads...">
+                            <select id="filterType" class="input select"><option value="">All Types</option><option value="Social Media Lead">Social Media Lead</option><option value="Past Inquiry">Past Inquiry</option><option value="Drop Out">Drop Out</option><option value="Unpaid Fee">Unpaid Fee</option></select>
+                            <select id="filterStatus" class="input select"><option value="">All Status</option><option value="Answered">Answered</option><option value="Declined">Declined</option><option value="No Answer">No Answer</option><option value="Busy">Busy</option><option value="Call Back Later">Call Back Later</option></select>
+                            <select id="filterAgent" class="input select"><option value="">All Agents</option></select>
+                        </div>
+                    </div>
+                    <div class="card-body" id="leadsList"><div class="empty-state"><p>No leads found. Click "New Lead" to add your first lead.</p></div></div>
+                </div>
+            </section>
+
+            <section id="page-followups" class="page">
+                <div class="tabs"><button class="tab-btn active" data-tab="today">Today</button><button class="tab-btn" data-tab="upcoming">Upcoming</button><button class="tab-btn" data-tab="overdue">Overdue</button></div>
+                <div id="followupList" class="followup-list"><div class="empty-state"><p>No follow-ups in this category.</p></div></div>
+            </section>
+
+            <section id="page-analytics" class="page">
+                <div class="analytics-grid">
+                    <div class="card"><div class="card-header"><h3>Call Status Distribution</h3></div><div class="card-body" id="chartCallStatus"></div></div>
+                    <div class="card"><div class="card-header"><h3>Lead Type Breakdown</h3></div><div class="card-body" id="chartLeadType"></div></div>
+                    <div class="card"><div class="card-header"><h3>Follow-Up Progression</h3></div><div class="card-body" id="chartFollowUp"></div></div>
+                    <div class="card"><div class="card-header"><h3>Conversion Rates</h3></div><div class="card-body" id="conversionRates"></div></div>
+                </div>
+            </section>
+
+            <section id="page-admin" class="page">
+                <div class="tabs admin-tabs">
+                    <button class="tab-btn active" data-admin-tab="agents">Agent Management</button>
+                    <button class="tab-btn" data-admin-tab="data">Data Management</button>
+                </div>
+                <div id="adminTabAgents" class="admin-tab-content active">
+                    <div class="card">
+                        <div class="card-header"><h3>Agent Management</h3><button class="btn btn-primary btn-sm" id="addAgentBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Add Agent</button></div>
+                        <div class="card-body"><div id="agentsList" class="agents-list"><div class="empty-state"><p>No agents found.</p></div></div></div>
+                    </div>
+                </div>
+                <div id="adminTabData" class="admin-tab-content">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Data Management</h3>
+                            <div class="admin-actions">
+                                <button class="btn btn-success btn-sm" id="exportCsvBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Export CSV</button>
+                                <button class="btn btn-danger btn-sm" id="clearAllBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>Clear All Data</button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="admin-stats"><div class="admin-stat"><span class="admin-stat-value" id="adminTotalLeads">0</span><span>Total Records</span></div><div class="admin-stat"><span class="admin-stat-value" id="adminActiveLeads">0</span><span>Active</span></div><div class="admin-stat"><span class="admin-stat-value" id="adminCompletedLeads">0</span><span>Completed</span></div></div>
+                            <div id="adminTable" class="admin-table-container"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="app-footer">
+                <span>© 2026 ReCall</span>
+                <span class="footer-separator">·</span>
+                <span>by</span>
+                <img src="Productions - Black.png" alt="Evoke Productions" class="footer-logo" onerror="this.outerHTML='<span class=\'brand-fallback\'>Evoke Productions</span>'">
+            </footer>
+        </main>
+
+        <nav id="bottomNav" class="bottom-nav">
+            <a href="#" data-page="dashboard" class="bottom-nav-link active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg><span>Dashboard</span></a>
+            <a href="#" data-page="leads" class="bottom-nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg><span>Leads</span></a>
+            <a href="#" data-page="followups" class="bottom-nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><span>Follow-Ups</span></a>
+            <a href="#" data-page="analytics" class="bottom-nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg><span>Analytics</span></a>
+        </nav>
+    </div>
+
+    <!-- LEAD MODAL -->
+    <div id="leadModal" class="modal hidden">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header"><h3 id="modalTitle">Add New Lead</h3><button class="btn btn-ghost btn-icon modal-close">&times;</button></div>
+            <form id="leadForm" class="lead-form">
+                <div class="form-row">
+                    <div class="form-group"><label>Phone Number *</label><input type="tel" id="leadPhone" class="input" placeholder="+1 555 123 4567" required><div id="phoneDuplicateMsg" class="duplicate-msg hidden">Existing lead found — updating record</div></div>
+                    <div class="form-group"><label>Lead Type *</label><select id="leadType" class="input" required><option value="">Select Type</option><option value="Social Media Lead">Social Media Lead</option><option value="Past Inquiry">Past Inquiry</option><option value="Drop Out">Drop Out</option><option value="Unpaid Fee">Unpaid Fee</option></select></div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group"><label>Call Status *</label><select id="leadCallStatus" class="input" required><option value="">Select Status</option><option value="Answered">Answered</option><option value="Declined">Declined</option><option value="No Answer">No Answer</option><option value="Busy">Busy</option><option value="Call Back Later">Call Back Later</option></select></div>
+                    <div class="form-group"><label>Assigned Agent *</label><select id="leadAgent" class="input" required><option value="">Select Agent</option></select></div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group"><label>Next Follow-Up Date</label><input type="date" id="leadFollowUpDate" class="input"></div>
+                    <div class="form-group"><label>Follow-Up Count</label><input type="text" id="leadFollowUpCount" class="input" readonly value="1 / 3"></div>
+                </div>
+                <div class="form-group"><label>Remarks</label><textarea id="leadRemarks" class="input textarea" rows="3" placeholder="Add notes about the call..."></textarea></div>
+                <div class="form-actions"><button type="button" class="btn btn-ghost modal-cancel">Cancel</button><button type="submit" class="btn btn-primary" id="leadSubmitBtn">Save Lead</button></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- AGENT MODAL -->
+    <div id="agentModal" class="modal hidden">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header"><h3 id="agentModalTitle">Add New Agent</h3><button class="btn btn-ghost btn-icon modal-close-agent">&times;</button></div>
+            <form id="agentForm" class="lead-form">
+                <div class="form-group"><label>Display Name *</label><input type="text" id="agentDisplayName" class="input" placeholder="e.g. Sarah Johnson" required><small class="form-hint">This is shown throughout the app</small></div>
+                <div class="form-group"><label>Username (Login ID) *</label><input type="text" id="agentUsername" class="input" placeholder="e.g. sarah" required pattern="[a-zA-Z0-9_]+" title="Only letters, numbers, and underscores"><small class="form-hint">Used to log in. Auto-converted to lowercase.</small></div>
+                <div class="form-group"><label>Role *</label><select id="agentRole" class="input" required><option value="agent">Sales Agent</option><option value="admin">Administrator</option></select></div>
+                <div class="form-group"><label>Password *</label><input type="text" id="agentPassword" class="input" placeholder="Set a password" required minlength="4"><small class="form-hint">Minimum 4 characters</small></div>
+                <div class="form-actions"><button type="button" class="btn btn-ghost modal-close-agent">Cancel</button><button type="submit" class="btn btn-primary" id="agentSubmitBtn">Save Agent</button></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- CONFIRM MODAL -->
+    <div id="confirmModal" class="modal hidden">
+        <div class="modal-overlay"></div>
+        <div class="modal-content modal-sm">
+            <div class="modal-header"><h3 id="confirmTitle">Confirm</h3></div>
+            <div class="modal-body"><p id="confirmMessage">Are you sure?</p></div>
+            <div class="form-actions"><button class="btn btn-ghost" id="confirmCancel">Cancel</button><button class="btn btn-danger" id="confirmOk">Confirm</button></div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast hidden"><span id="toastMessage"></span></div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
