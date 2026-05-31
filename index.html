@@ -3,23 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ReCall by Evoke Productions</title>
+    <title>ReCall — Telesales CRM</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="Recall by Evoke Productions Logo.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="apple-touch-icon" href="Recall by Evoke Productions Logo.png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- ============================================
-         LOADING SCREEN
-         ============================================ -->
+    <!-- LOADING SCREEN -->
     <div id="loadingScreen" class="loading-screen">
         <div class="loading-content">
-            <!-- LOGO: Replace src="logo.png" with your logo image path -->
             <div class="loading-logo-wrap">
                 <div class="loading-logo-ring"></div>
                 <div class="loading-logo">
@@ -28,9 +21,7 @@
             </div>
             <h1 class="loading-title">ReCall</h1>
             <p class="loading-subtitle">Telesales CRM Platform</p>
-            <div class="loading-progress">
-                <div class="loading-progress-bar"></div>
-            </div>
+            <div class="loading-progress"><div class="loading-progress-bar"></div></div>
             <p class="loading-status" id="loadingStatus">Initializing...</p>
         </div>
         <div class="loading-footer">
@@ -44,7 +35,6 @@
         <div class="login-bg-orb orb-1"></div>
         <div class="login-bg-orb orb-2"></div>
         <div class="login-bg-orb orb-3"></div>
-
         <div class="login-container">
             <div class="login-header">
                 <div class="login-logo-wrap">
@@ -55,9 +45,7 @@
                 <h1 class="login-app-name">ReCall</h1>
                 <p class="login-tagline">Sign in to your workspace</p>
             </div>
-
             <form id="loginForm" class="login-form" novalidate>
-                <!-- User select with custom styling -->
                 <div class="login-field">
                     <label for="loginUsername" class="login-label">
                         <svg class="label-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
@@ -67,13 +55,9 @@
                         <select id="loginUsername" class="login-input login-select" required>
                             <option value="" disabled selected>Select a user</option>
                         </select>
-                        <div class="select-chevron">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-                        </div>
+                        <div class="select-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
                     </div>
                 </div>
-
-                <!-- Password field -->
                 <div class="login-field">
                     <label for="loginPassword" class="login-label">
                         <svg class="label-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
@@ -81,39 +65,33 @@
                     </label>
                     <div class="password-wrapper">
                         <input type="password" id="loginPassword" class="login-input" placeholder="Enter your password" required autocomplete="current-password">
-                        <button type="button" class="password-toggle" id="passwordToggle" aria-label="Toggle password visibility" tabindex="-1">
+                        <button type="button" class="password-toggle" id="passwordToggle" tabindex="-1">
                             <svg class="eye-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
                             <svg class="eye-closed hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
                         </button>
                     </div>
                 </div>
-
                 <div id="loginError" class="login-error hidden">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
                     <span id="loginErrorText">Invalid credentials</span>
                 </div>
-
                 <button type="submit" class="login-submit" id="loginSubmitBtn">
                     <span class="btn-text">Sign In</span>
                     <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                 </button>
             </form>
-
             <div class="login-footer">
                 <span>by</span>
-            <img src="Productions - Black.png" alt="Evoke Productions" class="footer-logo" onerror="this.outerHTML='<span class=\'brand-fallback\'>Evoke Productions</span>'">
-</div>
+                <img src="Productions - Black.png" alt="Evoke Productions" class="footer-logo" onerror="this.outerHTML='<span class=\'brand-fallback\'>Evoke Productions</span>'">
+            </div>
         </div>
     </div>
 
     <!-- MAIN APP -->
     <div id="appContainer" class="app-container hidden">
-
         <nav id="sidebar" class="sidebar">
             <div class="sidebar-header">
-                <div class="logo-mark-sm">
-                    <img src="Recall by Evoke Productions Logo.png" alt="ReCall" onerror="this.style.display='none'; this.parentElement.classList.add('logo-fallback');">
-                </div>
+                <div class="logo-mark-sm"><img src="Recall by Evoke Productions Logo.png" alt="ReCall" onerror="this.style.display='none'; this.parentElement.classList.add('logo-fallback');"></div>
                 <span class="sidebar-brand">ReCall</span>
             </div>
             <ul class="sidebar-nav">
@@ -155,22 +133,34 @@
                 </div>
             </header>
 
+            <!-- MONTHLY BANNER -->
+            <div id="monthlyBanner" class="monthly-banner hidden">
+                <div class="banner-content">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                    <div><strong>Monthly Cycle Complete</strong><span>Export last month's data before it is purged.</span></div>
+                    <button class="btn btn-success btn-sm" id="monthlyExportBtn">Export & Purge</button>
+                </div>
+            </div>
+
+            <!-- DASHBOARD -->
             <section id="page-dashboard" class="page active">
                 <div class="stats-grid">
-                    <div class="stat-card"><div class="stat-icon stat-icon-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div class="stat-info"><span class="stat-value" id="statTotal">0</span><span class="stat-label">Total Leads</span></div></div>
-                    <div class="stat-card"><div class="stat-icon stat-icon-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><div class="stat-info"><span class="stat-value" id="statAnswered">0</span><span class="stat-label">Answered</span></div></div>
+                    <div class="stat-card"><div class="stat-icon stat-icon-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div><div class="stat-info"><span class="stat-value" id="statTotal">0</span><span class="stat-label">Total Calls</span></div></div>
+                    <div class="stat-card"><div class="stat-icon stat-icon-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><div class="stat-info"><span class="stat-value" id="statAnswered">0</span><span class="stat-label">Answered</span></div></div>
+                    <div class="stat-card"><div class="stat-icon stat-icon-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div><div class="stat-info"><span class="stat-value" id="statConverted">0</span><span class="stat-label">Converted</span></div></div>
+                    <div class="stat-card"><div class="stat-icon stat-icon-cyan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg></div><div class="stat-info"><span class="stat-value" id="statProspect">0</span><span class="stat-label">Prospect</span></div></div>
+                    <div class="stat-card"><div class="stat-icon stat-icon-gray"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div><div class="stat-info"><span class="stat-value" id="statCold">0</span><span class="stat-label">Cold</span></div></div>
                     <div class="stat-card"><div class="stat-icon stat-icon-red"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></div><div class="stat-info"><span class="stat-value" id="statDeclined">0</span><span class="stat-label">Declined</span></div></div>
-                    <div class="stat-card"><div class="stat-icon stat-icon-orange"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div><div class="stat-info"><span class="stat-value" id="statNoAnswer">0</span><span class="stat-label">No Answer</span></div></div>
-                    <div class="stat-card"><div class="stat-icon stat-icon-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div class="stat-info"><span class="stat-value" id="statPending">0</span><span class="stat-label">Pending</span></div></div>
-                    <div class="stat-card"><div class="stat-icon stat-icon-gray"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div><div class="stat-info"><span class="stat-value" id="statCompleted">0</span><span class="stat-label">Completed</span></div></div>
-                    <div class="stat-card"><div class="stat-icon stat-icon-cyan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><div class="stat-info"><span class="stat-value" id="statToday">0</span><span class="stat-label">Today</span></div></div>
+                    <div class="stat-card"><div class="stat-icon stat-icon-orange"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div><div class="stat-info"><span class="stat-value" id="statBusy">0</span><span class="stat-label">Busy</span></div></div>
+                    <div class="stat-card"><div class="stat-icon stat-icon-cyan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><div class="stat-info"><span class="stat-value" id="statFollowUps">0</span><span class="stat-label">Follow-Ups Due</span></div></div>
                 </div>
                 <div class="dashboard-grid">
-                    <div class="card"><div class="card-header"><h3>Today's Follow-Ups</h3></div><div class="card-body" id="todayFollowUps"><div class="empty-state"><p>No follow-ups scheduled for today.</p></div></div></div>
+                    <div class="card"><div class="card-header"><h3>Today's Follow-Ups</h3><button class="btn btn-ghost btn-xs" onclick="UI.navigateTo('followups')">View All</button></div><div class="card-body" id="todayFollowUps"><div class="empty-state"><p>No follow-ups scheduled for today.</p></div></div></div>
                     <div class="card"><div class="card-header"><h3>Recent Activity</h3></div><div class="card-body" id="recentActivity"><div class="empty-state"><p>No recent activity.</p></div></div></div>
                 </div>
             </section>
 
+            <!-- LEADS -->
             <section id="page-leads" class="page">
                 <div class="card">
                     <div class="card-header">
@@ -178,31 +168,46 @@
                         <div class="filter-bar">
                             <input type="text" id="searchInput" class="input input-search" placeholder="Search leads...">
                             <select id="filterType" class="input select"><option value="">All Types</option><option value="Social Media Lead">Social Media Lead</option><option value="Past Inquiry">Past Inquiry</option><option value="Drop Out">Drop Out</option><option value="Unpaid Fee">Unpaid Fee</option></select>
-                            <select id="filterStatus" class="input select"><option value="">All Status</option><option value="Answered">Answered</option><option value="Declined">Declined</option><option value="No Answer">No Answer</option><option value="Busy">Busy</option><option value="Call Back Later">Call Back Later</option></select>
+                            <select id="filterStatus" class="input select"><option value="">All Status</option><option value="Answered">Answered</option><option value="Declined">Declined</option><option value="Busy">Busy</option><option value="Assigned">Assigned</option></select>
                             <select id="filterAgent" class="input select"><option value="">All Agents</option></select>
                         </div>
                     </div>
-                    <div class="card-body" id="leadsList"><div class="empty-state"><p>No leads found. Click "New Lead" to add your first lead.</p></div></div>
+                    <div class="card-body" id="leadsList"><div class="empty-state"><p>No leads found.</p></div></div>
                 </div>
             </section>
 
+            <!-- FOLLOW-UPS -->
             <section id="page-followups" class="page">
-                <div class="tabs"><button class="tab-btn active" data-tab="today">Today</button><button class="tab-btn" data-tab="upcoming">Upcoming</button><button class="tab-btn" data-tab="overdue">Overdue</button></div>
-                <div id="followupList" class="followup-list"><div class="empty-state"><p>No follow-ups in this category.</p></div></div>
-            </section>
-
-            <section id="page-analytics" class="page">
-                <div class="analytics-grid">
-                    <div class="card"><div class="card-header"><h3>Call Status Distribution</h3></div><div class="card-body" id="chartCallStatus"></div></div>
-                    <div class="card"><div class="card-header"><h3>Lead Type Breakdown</h3></div><div class="card-body" id="chartLeadType"></div></div>
-                    <div class="card"><div class="card-header"><h3>Follow-Up Progression</h3></div><div class="card-body" id="chartFollowUp"></div></div>
-                    <div class="card"><div class="card-header"><h3>Conversion Rates</h3></div><div class="card-body" id="conversionRates"></div></div>
+                <div class="tabs">
+                    <button class="tab-btn active" data-followup-tab="today">Today</button>
+                    <button class="tab-btn" data-followup-tab="upcoming">Upcoming</button>
+                    <button class="tab-btn" data-followup-tab="overdue">Overdue</button>
+                </div>
+                <div class="card">
+                    <div class="card-header"><h3 id="followupTitle">Today's Follow-Ups</h3><span class="assignments-count" id="followupCount">0</span></div>
+                    <div class="card-body" id="followupList"><div class="empty-state"><p>No follow-ups in this category.</p></div></div>
                 </div>
             </section>
 
+            <!-- ANALYTICS -->
+            <section id="page-analytics" class="page">
+                <div class="analytics-header">
+                    <h3>Performance Analytics</h3>
+                    <select id="analyticsAgentFilter" class="input select" style="max-width:200px;"><option value="">All Agents</option></select>
+                </div>
+                <div class="analytics-grid">
+                    <div class="card"><div class="card-header"><h3>Call Outcomes</h3></div><div class="card-body" id="chartOutcomes"></div></div>
+                    <div class="card"><div class="card-header"><h3>Call Status Breakdown</h3></div><div class="card-body" id="chartCallStatus"></div></div>
+                    <div class="card"><div class="card-header"><h3>Lead Type Distribution</h3></div><div class="card-body" id="chartLeadType"></div></div>
+                    <div class="card"><div class="card-header"><h3>Conversion Metrics</h3></div><div class="card-body" id="conversionRates"></div></div>
+                </div>
+            </section>
+
+            <!-- ADMIN -->
             <section id="page-admin" class="page">
                 <div class="tabs admin-tabs">
                     <button class="tab-btn active" data-admin-tab="agents">Agent Management</button>
+                    <button class="tab-btn" data-admin-tab="assign">Lead Assignment</button>
                     <button class="tab-btn" data-admin-tab="data">Data Management</button>
                 </div>
                 <div id="adminTabAgents" class="admin-tab-content active">
@@ -211,17 +216,53 @@
                         <div class="card-body"><div id="agentsList" class="agents-list"><div class="empty-state"><p>No agents found.</p></div></div></div>
                     </div>
                 </div>
+                <div id="adminTabAssign" class="admin-tab-content">
+                    <div class="card">
+                        <div class="card-header"><h3>Assign Lead to Agents (Future Tasks)</h3></div>
+                        <div class="card-body">
+                            <form id="assignForm" class="assign-form">
+                                <div class="form-section">
+                                    <div class="form-section-header">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                                        <span>Lead Information</span>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group"><label>Phone Number *</label><input type="tel" id="assignPhone" class="input" placeholder="+1 555 123 4567" required></div>
+                                        <div class="form-group"><label>Lead Type *</label><select id="assignType" class="input" required><option value="">Select Type</option><option value="Social Media Lead">Social Media Lead</option><option value="Past Inquiry">Past Inquiry</option><option value="Drop Out">Drop Out</option><option value="Unpaid Fee">Unpaid Fee</option></select></div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group"><label>Target Date *</label><input type="date" id="assignDate" class="input" required></div>
+                                        <div class="form-group"><label>Remarks</label><input type="text" id="assignRemarks" class="input" placeholder="Instructions for agent..."></div>
+                                    </div>
+                                </div>
+                                <div class="form-section">
+                                    <div class="form-section-header">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                                        <span>Select Agents to Assign</span>
+                                    </div>
+                                    <label class="checkbox-item checkbox-select-all">
+                                        <input type="checkbox" id="selectAllAgents">
+                                        <span class="checkmark"></span>
+                                        <span class="checkbox-label">Select All Agents</span>
+                                        <span class="checkbox-hint">(excludes yourself and primary admin)</span>
+                                    </label>
+                                    <div id="agentCheckboxes" class="agent-checkboxes"></div>
+                                </div>
+                                <div class="form-actions"><button type="submit" class="btn btn-primary btn-full">Assign Lead to Selected Agents</button></div>
+                            </form>
+                            <div class="assignments-header">
+                                <h4>Active Assignments</h4>
+                                <span class="assignments-count" id="assignmentsCount">0</span>
+                            </div>
+                            <div id="assignmentsList"><div class="empty-state"><p>No active assignments.</p></div></div>
+                        </div>
+                    </div>
+                </div>
                 <div id="adminTabData" class="admin-tab-content">
                     <div class="card">
-                        <div class="card-header">
-                            <h3>Data Management</h3>
-                            <div class="admin-actions">
-                                <button class="btn btn-success btn-sm" id="exportCsvBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Export CSV</button>
-                                <button class="btn btn-danger btn-sm" id="clearAllBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>Clear All Data</button>
-                            </div>
-                        </div>
+                        <div class="card-header"><h3>Data Management</h3><div class="admin-actions"><button class="btn btn-success btn-sm" id="exportCsvBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Export Monthly CSV</button><button class="btn btn-danger btn-sm" id="clearAllBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>Clear All Data</button></div></div>
                         <div class="card-body">
-                            <div class="admin-stats"><div class="admin-stat"><span class="admin-stat-value" id="adminTotalLeads">0</span><span>Total Records</span></div><div class="admin-stat"><span class="admin-stat-value" id="adminActiveLeads">0</span><span>Active</span></div><div class="admin-stat"><span class="admin-stat-value" id="adminCompletedLeads">0</span><span>Completed</span></div></div>
+                            <div class="admin-stats"><div class="admin-stat"><span class="admin-stat-value" id="adminTotalLeads">0</span><span>Total Records</span></div><div class="admin-stat"><span class="admin-stat-value" id="adminAnswered">0</span><span>Answered</span></div><div class="admin-stat"><span class="admin-stat-value" id="adminConverted">0</span><span>Converted</span></div></div>
                             <div id="adminTable" class="admin-table-container"></div>
                         </div>
                     </div>
@@ -247,22 +288,62 @@
     <!-- LEAD MODAL -->
     <div id="leadModal" class="modal hidden">
         <div class="modal-overlay"></div>
-        <div class="modal-content">
-            <div class="modal-header"><h3 id="modalTitle">Add New Lead</h3><button class="btn btn-ghost btn-icon modal-close">&times;</button></div>
+        <div class="modal-content modal-lg">
+            <div class="modal-header modal-header-gradient">
+                <div class="modal-header-content">
+                    <div class="modal-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    </div>
+                    <div>
+                        <h3 id="modalTitle">Add New Lead</h3>
+                        <p class="modal-subtitle" id="modalSubtitle">Record call information</p>
+                    </div>
+                </div>
+                <button class="btn btn-ghost btn-icon modal-close">&times;</button>
+            </div>
+            <div id="agentBanner" class="agent-banner hidden">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                <span>Recording call as <strong id="bannerAgentName">Agent</strong></span>
+            </div>
             <form id="leadForm" class="lead-form">
-                <div class="form-row">
-                    <div class="form-group"><label>Phone Number *</label><input type="tel" id="leadPhone" class="input" placeholder="+1 555 123 4567" required><div id="phoneDuplicateMsg" class="duplicate-msg hidden">Existing lead found — updating record</div></div>
-                    <div class="form-group"><label>Lead Type *</label><select id="leadType" class="input" required><option value="">Select Type</option><option value="Social Media Lead">Social Media Lead</option><option value="Past Inquiry">Past Inquiry</option><option value="Drop Out">Drop Out</option><option value="Unpaid Fee">Unpaid Fee</option></select></div>
+                <div class="form-section">
+                    <div class="form-section-header">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        <span>Contact Details</span>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group"><label>Phone Number *</label><input type="tel" id="leadPhone" class="input" placeholder="+1 555 123 4567" required><div id="phoneDuplicateMsg" class="duplicate-msg hidden">Existing lead found</div></div>
+                        <div class="form-group"><label>Lead Type *</label><select id="leadType" class="input" required><option value="">Select Type</option><option value="Social Media Lead">Social Media Lead</option><option value="Past Inquiry">Past Inquiry</option><option value="Drop Out">Drop Out</option><option value="Unpaid Fee">Unpaid Fee</option></select></div>
+                    </div>
                 </div>
-                <div class="form-row">
-                    <div class="form-group"><label>Call Status *</label><select id="leadCallStatus" class="input" required><option value="">Select Status</option><option value="Answered">Answered</option><option value="Declined">Declined</option><option value="No Answer">No Answer</option><option value="Busy">Busy</option><option value="Call Back Later">Call Back Later</option></select></div>
-                    <div class="form-group"><label>Assigned Agent *</label><select id="leadAgent" class="input" required><option value="">Select Agent</option></select></div>
+                <div class="form-section">
+                    <div class="form-section-header">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11H5a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2h-4M9 11V7a3 3 0 0 1 6 0v4M9 11h6"/></svg>
+                        <span>Call Result</span>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group"><label>Call Status *</label><select id="leadCallStatus" class="input" required><option value="">Select Status</option><option value="Answered">Answered</option><option value="Declined">Declined</option><option value="Busy">Busy</option></select></div>
+                        <div class="form-group hidden" id="outcomeGroup"><label>Outcome *</label><select id="leadOutcome" class="input"><option value="">Select Outcome</option><option value="Converted">Converted</option><option value="Prospect">Prospect</option><option value="Cold">Cold</option><option value="Declined">Declined</option></select></div>
+                    </div>
                 </div>
-                <div class="form-row">
-                    <div class="form-group"><label>Next Follow-Up Date</label><input type="date" id="leadFollowUpDate" class="input"></div>
-                    <div class="form-group"><label>Follow-Up Count</label><input type="text" id="leadFollowUpCount" class="input" readonly value="1 / 3"></div>
+                <div class="form-section">
+                    <div class="form-section-header">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        <span>Follow-Up Schedule</span>
+                    </div>
+                    <div class="form-group">
+                        <label>Next Follow-Up Date <span style="font-weight:400;text-transform:none;letter-spacing:0">(optional)</span></label>
+                        <input type="date" id="leadFollowUpDate" class="input">
+                        <small class="form-hint">Leave empty if no follow-up is needed</small>
+                    </div>
                 </div>
-                <div class="form-group"><label>Remarks</label><textarea id="leadRemarks" class="input textarea" rows="3" placeholder="Add notes about the call..."></textarea></div>
+                <div class="form-section">
+                    <div class="form-section-header">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                        <span>Notes</span>
+                    </div>
+                    <div class="form-group"><label>Remarks</label><textarea id="leadRemarks" class="input textarea" rows="3" placeholder="Add notes about the call..."></textarea></div>
+                </div>
                 <div class="form-actions"><button type="button" class="btn btn-ghost modal-cancel">Cancel</button><button type="submit" class="btn btn-primary" id="leadSubmitBtn">Save Lead</button></div>
             </form>
         </div>
@@ -272,12 +353,32 @@
     <div id="agentModal" class="modal hidden">
         <div class="modal-overlay"></div>
         <div class="modal-content">
-            <div class="modal-header"><h3 id="agentModalTitle">Add New Agent</h3><button class="btn btn-ghost btn-icon modal-close-agent">&times;</button></div>
+            <div class="modal-header modal-header-gradient">
+                <div class="modal-header-content">
+                    <div class="modal-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+                    </div>
+                    <div>
+                        <h3 id="agentModalTitle">Add New Agent</h3>
+                        <p class="modal-subtitle" id="agentModalSubtitle">Agent account details</p>
+                    </div>
+                </div>
+                <button class="btn btn-ghost btn-icon modal-close-agent">&times;</button>
+            </div>
             <form id="agentForm" class="lead-form">
-                <div class="form-group"><label>Display Name *</label><input type="text" id="agentDisplayName" class="input" placeholder="e.g. Sarah Johnson" required><small class="form-hint">This is shown throughout the app</small></div>
-                <div class="form-group"><label>Username (Login ID) *</label><input type="text" id="agentUsername" class="input" placeholder="e.g. sarah" required pattern="[a-zA-Z0-9_]+" title="Only letters, numbers, and underscores"><small class="form-hint">Used to log in. Auto-converted to lowercase.</small></div>
-                <div class="form-group"><label>Role *</label><select id="agentRole" class="input" required><option value="agent">Sales Agent</option><option value="admin">Administrator</option></select></div>
-                <div class="form-group"><label>Password *</label><input type="text" id="agentPassword" class="input" placeholder="Set a password" required minlength="4"><small class="form-hint">Minimum 4 characters</small></div>
+                <div class="form-section">
+                    <div class="form-section-header"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>Identity</span></div>
+                    <div class="form-group"><label>Display Name *</label><input type="text" id="agentDisplayName" class="input" placeholder="e.g. Sarah Johnson" required><small class="form-hint">Shown throughout the app</small></div>
+                </div>
+                <div class="form-section">
+                    <div class="form-section-header"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><span>Credentials</span></div>
+                    <div class="form-group"><label>Username (Login ID) *</label><input type="text" id="agentUsername" class="input" placeholder="e.g. sarah" required pattern="[a-zA-Z0-9_]+"><small class="form-hint">Auto-converted to lowercase</small></div>
+                    <div class="form-group"><label>Password *</label><input type="text" id="agentPassword" class="input" placeholder="Set a password" required minlength="4"><small class="form-hint">Minimum 4 characters</small></div>
+                </div>
+                <div class="form-section">
+                    <div class="form-section-header"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span>Role</span></div>
+                    <div class="form-group"><label>Access Level *</label><select id="agentRole" class="input" required><option value="agent">Sales Agent</option><option value="admin">Administrator</option></select></div>
+                </div>
                 <div class="form-actions"><button type="button" class="btn btn-ghost modal-close-agent">Cancel</button><button type="submit" class="btn btn-primary" id="agentSubmitBtn">Save Agent</button></div>
             </form>
         </div>
@@ -287,7 +388,12 @@
     <div id="confirmModal" class="modal hidden">
         <div class="modal-overlay"></div>
         <div class="modal-content modal-sm">
-            <div class="modal-header"><h3 id="confirmTitle">Confirm</h3></div>
+            <div class="modal-header modal-header-gradient">
+                <div class="modal-header-content">
+                    <div class="modal-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+                    <h3 id="confirmTitle">Confirm</h3>
+                </div>
+            </div>
             <div class="modal-body"><p id="confirmMessage">Are you sure?</p></div>
             <div class="form-actions"><button class="btn btn-ghost" id="confirmCancel">Cancel</button><button class="btn btn-danger" id="confirmOk">Confirm</button></div>
         </div>
